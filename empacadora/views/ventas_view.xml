@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      
+        <!-- Vista de formulario para el modelo ventas -->
+        <record model="ir.ui.view" id="empacadora_ventas_form">
+            <field name="name">empacadora.ventas.form</field>
+            <field name="model">empacadora.ventas</field>
+            <field name="arch" type="xml">
+                <form>
+                  <header>
+                     <button name="registrar" string="Registrar" type="object" class="oe_highlight" attrs="{'invisible':[('state','!=','cre')]}"/>
+                     <field name="state" widget="statusbar"/>
+                  </header>
+                    <sheet>
+                        <group>
+
+                            <field name = "folio"/>
+                            <field name="socio_id"/>
+                            <field name="id_producto"/>
+                            <field name="type_client"/>
+                            <field name="fecha"/>
+                            <field name="direccion"/>
+                            <field name = "precio_unitario"/>
+                            <field name = "cantidad"/>
+                            <field name = "precio_venta"/>
+                            <field name = "total_venta" readonly="1"/>
+                            
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!-- Vista para de tipo tree de la lista de ventas relizadas -->
+        <record  model="ir.ui.view" id="empacadora_ventas_tree">
+            <field name="name">empacadora.ventas.tree</field>
+            <field name="model">empacadora.ventas</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                  
+                    <field name="folio"/>
+                    <field name="fecha"/>
+                    <field name="socio_id"/>
+                    <field name="id_producto"/>
+                    <field name="cantidad"/>
+                    <field name="precio_venta"/>
+                    <field name = "total_venta" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+
+
+		<!-- ACCION PARA EL MODELO empacadora.ventas -->	
+		<record id="empacadora_ventas_action" model="ir.actions.act_window">
+			<field name="name">Ventas</field>
+			<field name="res_model">empacadora.ventas</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+</odoo>

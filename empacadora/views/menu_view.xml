@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem name="Product management" id="empacadora_menu" sequence="20" />
+			<menuitem name="Departamentos" id="empacadora_configuracion_menu" sequence="10" parent="empacadora_menu" />
+
+				<menuitem name="Produtos" action="empacadora_productos_action"  id="empacadora_productos_menu" sequence="10" parent="empacadora_configuracion_menu" />
+				<menuitem name="Socios" action="empacadora_socios_action"  id="empacadora_socios_menu" sequence="20" parent="empacadora_configuracion_menu" />
+				<menuitem name="Compras" action="empacadora_compras_action"  id="empacadora_compras_menu" sequence="30" parent="empacadora_configuracion_menu" />
+				<menuitem name="Ventas" action="empacadora_ventas_action"  id="empacadora_ventas_menu" sequence="40" parent="empacadora_configuracion_menu" />
+
+				
+
+				
+
+	</data>
+</odoo>

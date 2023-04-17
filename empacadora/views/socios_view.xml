@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- vista tipo tree del modelo empacadora.socios -->	
+		<record model="ir.ui.view" id="empacadora_socios_tree">
+			<field name="name">empacadora.socios.tree</field>
+			<field name="model">empacadora.socios</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Socios">
+					<field name="photo"  widget="image" options="{'size': [50, 50]}"/>
+					<field name="name" />
+					<field name="direccion" />
+					<field name="type_client" />
+					<field name="celular" />
+					<field name="cp" />
+					<field name="localidad" />
+					<field name="producto_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="ligas_form">
+            <field name="name">empacadora.socios.form</field>
+            <field name="model">empacadora.socios</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Datos de socios" >
+                        <field name="photo" widget="image" options="{'size': [150, 150]}"/>
+                        <field name="name" placeholder="Nombre del socio"/>
+						<field name="direccion" placeholder="Direc socio" />
+					    <field name="type_client" placeholder="tipo de socio" />
+					    <field name="celular"  placeholder="cel de socio"/>
+					    <field name="cp" placeholder="codigo_postal socio" />
+					    <field name="localidad" placeholder="localidad del socio" />
+                        <field name="producto_id" placeholder="id del producto" />
+                       
+                    </group>
+					
+                </sheet>
+            </form>
+            </field>
+		</record>
+
+
+		<record model="ir.ui.view" id="empacadora_socios_search">
+			<field name="name">empacadora.socios.search</field>
+			<field name="model">empacadora.socios</field>
+			<field name="arch" type="xml">
+				<search>
+                        <field name="name"/>
+                        <field name="producto_id"/>
+                        
+				</search>
+			</field>
+		</record>
+
+
+		<!-- ACCION PARA EL MODELO empacadora.socios -->	
+		<record id="empacadora_socios_action" model="ir.actions.act_window">
+			<field name="name">Socios</field>
+			<field name="res_model">empacadora.socios</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+</odoo>
